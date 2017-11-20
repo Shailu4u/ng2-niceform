@@ -1,0 +1,36 @@
+/* Nice input CSS styles */
+
+.nice-container {
+    position: relative;
+}
+
+input.nice-input {
+    border: none;
+    box-shadow: none;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 0;
+    width: 100%;
+    color: orangered;
+    border-bottom: 2px solid #e5e6dd;
+}
+input.nice-input:hover, input.nice-input:focus{
+    border: none;
+    box-shadow: none;    
+    border-radius: 0;
+    outline: none;
+    border-bottom: 2px solid #e5e6dd;
+}
+
+div.nice-span-container {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border-bottom: 2px solid orangered;
+}
+
+.nice-span-container span{
+    visibility: hidden;
+    font-size: 22px;
+}

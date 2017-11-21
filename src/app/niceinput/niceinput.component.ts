@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
    <input type="text" class="nice-input" [value]= "niceinputValue" (input)="niceinputValue = $event.target.value"
      id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter some text">
       <div class="nice-span-container">
-       <span class="nice-span">{{niceinputValue}}</span>
+       <span class="nice-span" [innerHTML]= "niceinputValue"></span>
       </div>
     </div>
   `,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Iniceinput } from './niceinput/niceinput.modal'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'app';
+ 
+  niceInputData: Iniceinput;
+
+  constructor() {
+    this.niceInputData = {
+      id: "niceEmail",
+      label: "Email",
+      type: "text",
+      readonly: false,
+      value: "",
+      classes: "form-control input-text"
+    }
+  }
+
+  OninputChange(msg: string): void {
+    console.log(msg);
+  }
 }

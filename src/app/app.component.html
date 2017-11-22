@@ -1,22 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-4">
-            <h1>Nice Input</h1>
+            <h3>Nice Form</h3>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-4">
             <div class="panel panel-default">
                 <form>
-                    <fieldset>
-                        <legend>Nice Form Elements</legend>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <niceinput></niceinput>
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <fieldset>                        
+                        <div class="form-group">                            
+                            <niceinput [niceInputData]="niceInputData" (notify)="OninputChange($event)"></niceinput>                            
                         </div>
-                    </fieldset>
-                    
+                    </fieldset>                    
                 </form>
             </div>
         </div>

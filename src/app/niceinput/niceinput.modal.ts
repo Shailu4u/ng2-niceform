@@ -4,6 +4,7 @@ export interface Iniceinput {
     type: string,
     readonly ?: boolean,
     disabled ?: boolean,
+    required ?: boolean,
     value ?: any,
     classes ?:  string
 }

@@ -12,16 +12,16 @@ export class AppComponent {
 
   constructor() {
     this.niceInputData = {
-      id: "niceEmail",
-      label: "Email",
+      id: "niceUserName",
+      label: "User Name",
       type: "text",
-      readonly: false,
       value: "",
-      classes: "form-control input-text"
+      classes: "form-control",
+      required: true
     }
   }
 
-  OninputChange(msg: string): void {
-    console.log(msg);
+  OninputChange(value: string): void {
+    console.log("On input change",value);
   }
 }

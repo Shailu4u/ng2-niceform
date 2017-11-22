@@ -10,7 +10,15 @@
                 <form>
                     <fieldset>                        
                         <div class="form-group">                            
-                            <niceinput [niceInputData]="niceInputData" (notify)="OninputChange($event)"></niceinput>                            
+                            <niceinput
+                                [id]="niceInputData.id"
+                                [label]="niceInputData.label"
+                                [type]="niceInputData.type" 
+                                [value]="niceInputData.value" 
+                                [classes]="niceInputData.classes"
+                                [required]="niceInputData.required"
+                                (notify)="OninputChange($event)"
+                            ></niceinput>                            
                         </div>
                     </fieldset>                    
                 </form>

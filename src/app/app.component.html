@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <h3>Nice Form</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <div class="panel panel-default">
+                <form>
+                    <fieldset>                        
+                        <div class="form-group">                            
+                            <niceinput
+                                [id]="niceInputData.id"
+                                [label]="niceInputData.label"
+                                [type]="niceInputData.type" 
+                                [value]="niceInputData.value" 
+                                [classes]="niceInputData.classes"
+                                [required]="niceInputData.required"
+                                (notify)="OninputChange($event)"
+                            ></niceinput>                            
+                        </div>
+                    </fieldset>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+/* Nice input CSS styles */
+
+$font-color: orangered;
+$font-family: "Segoe UI", sans-serif;
+$font-size: 20px;
+$border-color: #EEE;
+$border-hover-color: #CCC;
+$border-width: 1px;
+$border-focus-width: 2px;
+
+.nice-field-wrapper {
+    position: relative;
+}
+
+.nice-field-container {
+    padding-top: $font-size;
+    font-family: $font-family;
+}
+
+input.nice-input {
+    border: none;
+    box-shadow: none;
+    font-size: $font-size;
+    height: 2 * $font-size;
+    border-radius: 0;
+    width: 100%;
+    color: $font-color;
+    border-bottom: $border-width solid $border-color;
+    padding: 0;
+    background-color: transparent;
+
+    &:hover, &:focus {
+        border: none;
+        box-shadow: none;    
+        border-radius: 0;
+        outline: none;
+    }
+
+    &:hover {
+        border-bottom: $border-width solid $border-hover-color;
+    }
+
+    &:focus { 
+        border-bottom: $border-focus-width solid $border-hover-color;
+    }
+
+    &:disabled, &[readonly] {
+        background-color: #fafafa;
+        opacity: 0.75;
+    }
+}
+
+.nice-span-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border-bottom: $border-width solid #888;
+    height: $border-width;
+
+    span.nice-span {
+        visibility: hidden;
+        font-size: $font-size;    
+    }
+}
+
+input.nice-input:focus + .nice-span-container {
+    border-bottom: $border-focus-width solid $font-color;
+}
+
+input.nice-input:focus ~ .nice-label-wrapper label {
+    transform: translateY(-$font-size) scale(.75) perspective(5px) translateZ(0.001px);
+    -ms-transform: translateY(-$font-size) scale(.75);
+    width: 133.33333%;
+    color: $font-color;
+}
+
+.nice-label-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    padding-top: $font-size;
+
+    label {
+        position: absolute;
+        left: 0;
+        font-size: $font-size;
+        margin: 0;
+        pointer-events: none;
+        color: #555;
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transform: perspective(100px);
+        -ms-transform: none;
+        transform-origin: 0 0;
+        transition: transform .4s cubic-bezier(.25,.8,.25,1),color .4s cubic-bezier(.25,.8,.25,1),width .4s cubic-bezier(.25,.8,.25,1);    
+
+        &.nice-label-can-float {
+            transform: translateY(-$font-size) scale(.75) perspective(5px) translateZ(0.001px);
+            -ms-transform: translateY(-$font-size) scale(.75);
+            width: 133.33333%;
+        }
+    }
+}

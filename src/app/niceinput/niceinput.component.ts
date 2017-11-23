@@ -12,12 +12,12 @@ import { Iniceinput } from './niceinput.modal';
         <span class="nice-span" [innerHTML]="highlight()"></span>
       </div>
       <div class="nice-label-wrapper">
-        <label [ngClass]="value.length ? 'nice-form-field-can-float': ''" [for]="id">{{label}}<sup *ngIf="required">*</sup></label>
+        <label [ngClass]="value.length ? 'nice-label-can-float': ''" [for]="id">{{label}}<sup *ngIf="required">*</sup></label>
       </div>
     </div>
   </div>
   `,
-  styleUrls: [ "niceinput.css" ]
+  styleUrls: [ "niceinput.scss" ]
 })
 
 export class NiceinputComponent implements OnInit, Iniceinput {

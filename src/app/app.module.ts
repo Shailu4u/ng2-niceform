@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NiceinputModule } from './niceinput/niceinput.module';
+import { NicetextareaModule } from './nicetextarea/nicetextarea.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent    
   ],
   imports: [
     BrowserModule, 
-    NiceinputModule
+    NiceinputModule,
+    NicetextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

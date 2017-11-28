@@ -20,6 +20,15 @@
                                 (notify)="OninputChange($event)"
                             ></niceinput>                            
                         </div>
+                        <div class="form-group">
+                            <nicetextarea
+                                [id]="niceTextareaData.id"
+                                [label]="niceTextareaData.label"
+                                [value]="niceTextareaData.value" 
+                                [classes]="niceTextareaData.classes"
+                                [required]="niceTextareaData.required"
+                            ></nicetextarea>
+                        </div>
                     </fieldset>                    
                 </form>
             </div>

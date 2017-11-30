@@ -10,7 +10,7 @@
                 <form>
                     <fieldset>                        
                         <div class="form-group">                            
-                            <niceinput
+                            <nice-input
                                 [id]="niceInputData.id"
                                 [label]="niceInputData.label"
                                 [type]="niceInputData.type" 
@@ -18,16 +18,30 @@
                                 [classes]="niceInputData.classes"
                                 [required]="niceInputData.required"
                                 (notify)="OninputChange($event)"
-                            ></niceinput>                            
+                                [disabled]="niceInputData.disabled"
+                                [readonly]="niceInputData.readonly"
+                            ></nice-input>                            
                         </div>
                         <div class="form-group">
-                            <nicetextarea
+                            <nice-textarea
                                 [id]="niceTextareaData.id"
                                 [label]="niceTextareaData.label"
                                 [value]="niceTextareaData.value" 
                                 [classes]="niceTextareaData.classes"
                                 [required]="niceTextareaData.required"
-                            ></nicetextarea>
+                                [disabled]="niceTextareaData.disabled"
+                                [readonly]="niceTextareaData.readonly"
+                            ></nice-textarea>
+                        </div>
+                        <div class="form-group">
+                            <nice-checkbox
+                                [id]="niceCheckboxData.id"
+                                [label]="niceCheckboxData.label"
+                                [checked]="niceCheckboxData.checked" 
+                                [required]="niceCheckboxData.required"
+                                [disabled]="niceCheckboxData.disabled"
+                                [readonly]="niceCheckboxData.readonly"
+                            ></nice-checkbox>
                         </div>
                     </fieldset>                    
                 </form>

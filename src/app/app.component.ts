@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Iniceinput } from './niceinput/niceinput.modal';
-import { Inicetextarea } from './nicetextarea/nicetextarea.modal';
+import { Iniceinput } from './niceinput/niceinput.model';
+import { Inicetextarea } from './nicetextarea/nicetextarea.model';
+import { Inicecheckbox } from './nicecheckbox/nicecheckbox.model';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +12,37 @@ export class AppComponent {
  
   niceInputData: Iniceinput;
   niceTextareaData: Inicetextarea;
+  niceCheckboxData: Inicecheckbox;
 
   constructor() {
     //Input box
     this.niceInputData = {
       id: "niceUserName",
-      label: "User Name",
+      label: "User Name (Input)",
       type: "text",
       value: "",
       classes: "form-control",
-      required: true
+      required: true,
+      disabled: false,
+      readonly: false
     };
     //textarea
     this.niceTextareaData = {
       id: "niceComments",
-      label: "Nice Comments",
+      label: "Nice Comments (Textarea)",
       value: "",
       classes: "form-control",
-      required: true
+      required: false,
+      disabled: false,
+      readonly: false
+    }
+    //Checkbox
+    this.niceCheckboxData = {
+      id: "niceCheckbox",
+      label: "Check me!",
+      checked: false,
+      disabled: false,
+      readonly: false
     }
   }
 

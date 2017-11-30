@@ -5,6 +5,8 @@ $font-family: "Segoe UI", sans-serif;
 $font-size: 20px;
 $bg-color: #EEE;
 $bg-hover-color: #CCC;
+$bg-focus-color: deepskyblue;
+$disabled-color: #b0b0b0;
 $highlight-height: 1px;
 $highlight-focus-height: 2px;
 
@@ -29,19 +31,22 @@ textarea.nice-textarea {
     margin: 0;
     padding: 0;
     overflow:hidden;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
 
     &:hover, &:focus {
         border: none;
         box-shadow: none;    
         border-radius: 0;
         outline: none;
-        border-bottom: 1px solid transparent;
+        border-bottom: 2px solid transparent;
     }
 
     &:hover + .nice-span-container {
         height: $highlight-height;
         background-color: $bg-hover-color;
+        .nice-span-ripple {
+            height: $highlight-focus-height;   
+        }
         span.nice-span {
             height: $highlight-height;
             background-color: $font-color;
@@ -50,6 +55,14 @@ textarea.nice-textarea {
 
     &:focus + .nice-span-container {        
         height: $highlight-focus-height;
+        background-color: transparent;        
+        .nice-span-ripple {
+            height: $highlight-focus-height;
+            background-color: $bg-focus-color;
+            visibility: visible;
+            transform: scaleX(1);
+            transition: transform 150ms linear,background-color .3s cubic-bezier(.55,0,.55,.2);
+        }
         span.nice-span {
             height: $highlight-focus-height;
             background-color: $font-color;
@@ -59,6 +72,10 @@ textarea.nice-textarea {
     &:disabled, &[readonly] {
         background-color: #fafafa;
         opacity: 0.75;
+        
+        ~ .nice-label-wrapper label {
+            color: $disabled-color;
+        }
     }
 }
 
@@ -70,15 +87,31 @@ textarea.nice-textarea {
     overflow: hidden;
     border: none;
     margin: 0;
-    padding: 0;
-    background-color: $bg-color;
+    padding: 0;    
     height: $highlight-height;
+    background-color: $bg-color;
+
+    .nice-span-ripple {
+        width: 100%;
+        height: $highlight-height;
+        background-color: $bg-color;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: 50%;
+        transform: scaleX(.2);
+        visibility: hidden;
+        transition: background-color .3s cubic-bezier(.55,0,.55,.2);
+    }
 
     span.nice-span {
         height: $highlight-height;
         font-size: $font-size;    
         display: inline-block;
         background-color: $font-color;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
 }
 

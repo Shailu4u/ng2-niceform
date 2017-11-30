@@ -1,14 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Inicetextarea } from './nicetextarea.modal';
+import { Inicetextarea } from './nicetextarea.model';
 
 @Component({
-  selector: 'nicetextarea',
+  selector: 'nice-textarea',
   template: `
     <div class="nice-field-wrapper">
       <div class="nice-field-container">
         <textarea class="nice-textarea" [id]="id" [ngClass]="classes" (input)="OnInput($event)"
               [required]="required" [disabled]="disabled" [readonly]="readonly"></textarea>
         <span class="nice-span-container" aria-hidden="true">
+          <span class="nice-span-ripple"></span>
           <span class="nice-span" [innerHTML]="highlight()"></span>
         </span>
         <div class="nice-label-wrapper">
@@ -19,24 +20,19 @@ import { Inicetextarea } from './nicetextarea.modal';
   `,
   styleUrls: [ "nicetextarea.scss"  ]
 })
-export class NicetextareaComponent implements OnInit,Inicetextarea {
+export class NicetextareaComponent implements OnInit, Inicetextarea {
 
-  @Input() id:  string;
-  @Input() label: string;
-  @Input() value: any;
+  @Input() id:  string = "nicetextarea_id";
+  @Input() label: string = "Label";
+  @Input() value: any = "";
   @Input() classes: string;
-  @Input() readonly: boolean;
-  @Input() disabled: boolean;
-  @Input() required: boolean;  
+  @Input() readonly: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() required: boolean = false;  
 
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { 
-    this.value = "";
-    this.id= "nicetextarea_id";
-    this.readonly = false;
-    this.disabled = false;
-    this.required = false;
+  constructor() {    
   }
 
   ngOnInit() {

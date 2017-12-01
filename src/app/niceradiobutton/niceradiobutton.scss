@@ -1,0 +1,111 @@
+/* Nice Radiobutton styles */
+
+$font-color: #333;
+$primary-color: orangered;
+$bg-focus-color: deepskyblue;
+$font-family: "Segoe UI", sans-serif;
+$font-size: 20px;
+$disabled-color: #b0b0b0;
+
+
+.nice-radio-label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: $font-color;
+}
+
+.nice-radio-container {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.nice-radio-outer-circle {
+    box-sizing: border-box;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: border-color ease 280ms;
+    width: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.nice-radio-label.nice-radio-checked .nice-radio-outer-circle {
+    border-color: $primary-color;
+}
+
+.nice-radio-inner-circle {
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform ease 280ms,background-color ease 280ms;
+    width: 20px;
+    transform: scale(.001);
+}
+.nice-radio-checked .nice-radio-inner-circle {
+    transform: scale(.5);
+}
+.nice-radio-label .nice-radio-inner-circle {
+    background-color: $primary-color;
+}
+
+.nice-radio-ripple {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+.nice-ripple {
+    overflow: hidden;
+}
+
+.cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.nice-radio-label-content {
+    display: inline-block;
+    order: 0;
+    line-height: inherit;
+    padding-left: 8px;
+    padding-right: 0;
+}
+
+.nice-radio-label.nice-radio-disabled, .nice-radio-label.nice-radio-readonly {
+    color: $disabled-color;
+    .nice-radio-outer-circle {
+        border-color: $disabled-color;
+    }
+    .nice-radio-inner-circle {
+        background-color: $disabled-color;
+    }
+}
+.nice-radio-input {
+
+    &:focus + .nice-radio-container {
+        outline: 2px solid $bg-focus-color;
+    }
+}

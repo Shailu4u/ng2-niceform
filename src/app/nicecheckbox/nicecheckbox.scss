@@ -46,7 +46,7 @@ $disabled-color: #b0b0b0;
     left: 50%;
 
     &:focus ~ .nice-checkbox-frame {
-        outline: 1px solid $bg-focus-color;
+        outline: 2px solid $bg-focus-color;
     }    
 }
 .nice-checkbox-ripple {

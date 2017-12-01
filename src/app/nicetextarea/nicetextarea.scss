@@ -32,6 +32,7 @@ textarea.nice-textarea {
     padding: 0;
     overflow:hidden;
     border-bottom: 2px solid transparent;
+    box-sizing: content-box;
 
     &:hover, &:focus {
         border: none;

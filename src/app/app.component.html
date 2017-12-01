@@ -31,17 +31,50 @@
                                 [required]="niceTextareaData.required"
                                 [disabled]="niceTextareaData.disabled"
                                 [readonly]="niceTextareaData.readonly"
+                                (notify)="OnTextareaChange($event)"
                             ></nice-textarea>
                         </div>
                         <div class="form-group">
                             <nice-checkbox
-                                [id]="niceCheckboxData.id"
-                                [label]="niceCheckboxData.label"
-                                [checked]="niceCheckboxData.checked" 
-                                [required]="niceCheckboxData.required"
-                                [disabled]="niceCheckboxData.disabled"
-                                [readonly]="niceCheckboxData.readonly"
+                                class="mr20"
+                                [id]="niceCheckboxData1.id"
+                                [label]="niceCheckboxData1.label"
+                                [checked]="niceCheckboxData1.checked" 
+                                [required]="niceCheckboxData1.required"
+                                [disabled]="niceCheckboxData1.disabled"
+                                [readonly]="niceCheckboxData1.readonly"
                             ></nice-checkbox>
+                            <nice-checkbox
+                                [id]="niceCheckboxData2.id"
+                                [label]="niceCheckboxData2.label"
+                                [checked]="niceCheckboxData2.checked" 
+                                [required]="niceCheckboxData2.required"
+                                [disabled]="niceCheckboxData2.disabled"
+                                [readonly]="niceCheckboxData2.readonly"
+                            ></nice-checkbox>
+                        </div>
+                        <div class="form-group">
+                            <nice-radiobutton
+                                class="mr20"
+                                [id]="niceRadiobuttonData1.id"
+                                [label]="niceRadiobuttonData1.label"
+                                [name]="niceRadiobuttonData1.name"
+                                [checked]="niceRadiobuttonData1.checked" 
+                                [required]="niceRadiobuttonData1.required"
+                                [disabled]="niceRadiobuttonData1.disabled"
+                                [readonly]="niceRadiobuttonData1.readonly"
+                            >                                
+                            </nice-radiobutton>
+                            <nice-radiobutton
+                                [id]="niceRadiobuttonData2.id"
+                                [label]="niceRadiobuttonData2.label"
+                                [name]="niceRadiobuttonData2.name"
+                                [checked]="niceRadiobuttonData2.checked" 
+                                [required]="niceRadiobuttonData2.required"
+                                [disabled]="niceRadiobuttonData2.disabled"
+                                [readonly]="niceRadiobuttonData2.readonly"
+                            >                                
+                            </nice-radiobutton>
                         </div>
                     </fieldset>                    
                 </form>

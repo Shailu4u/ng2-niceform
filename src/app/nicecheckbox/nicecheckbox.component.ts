@@ -6,7 +6,7 @@ import { Inicecheckbox } from './nicecheckbox.model';
   template: `
   <label class="nice-checkbox-layout" [for]="id" [ngClass]="{'nice-checkbox-checked': checked, 'nice-checkbox-unchecked': !checked, 'nice-checkbox-disabled' : disabled, 'nice-checkbox-readonly': readonly }">
     <div class="nice-checkbox-inner-container">
-      <input class="nice-checkbox-input cdk-visually-hidden" type="checkbox" [id]="id" tabindex="0" [checked]="checked" (change)="checked = !checked"
+      <input class="nice-checkbox-input cdk-visually-hidden" type="checkbox" [id]="id" tabindex="0" [checked]="checked" (change)="Onchange($event)"
              [attr.aria-checked]="checked" [required]="required" [disabled]="disabled" [readonly]="readonly">
       <div class="nice-checkbox-ripple nice-ripple" matripple=""></div>
       <div class="nice-checkbox-frame"></div>
@@ -39,8 +39,8 @@ export class NicecheckboxComponent implements OnInit, Inicecheckbox {
   }
 
   //on input change
-  OnInput($event) {
-    this.checked = $event.target.value;
+  Onchange($event) {
+    this.checked = !this.checked;
     this.notify.emit(this.checked);
   }
 

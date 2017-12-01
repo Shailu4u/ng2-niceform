@@ -1,4 +1,4 @@
-/* Nice input CSS styles */
+/* Nice textarea styles */
 
 $font-color: orangered;
 $font-family: "Segoe UI", sans-serif;
@@ -13,37 +13,40 @@ $highlight-focus-height: 2px;
 .nice-field-wrapper {
     position: relative;
 }
-
 .nice-field-container {
     padding-top: $font-size;
     font-family: $font-family;
 }
 
-input.nice-input {
+textarea.nice-textarea {
     border: none;
     box-shadow: none;
     font-size: $font-size;
-    height: 2 * $font-size;
+    min-height: 2 * $font-size;
     border-radius: 0;
     width: 100%;
-    color: $font-color;
-    border-bottom: $highlight-height solid transparent;
-    padding: 0;
+    max-width: 100%;
+    color: $font-color; 
     background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    border-bottom: 2px solid transparent;
+    box-sizing: content-box;
 
     &:hover, &:focus {
         border: none;
         box-shadow: none;    
         border-radius: 0;
         outline: none;
-        border-bottom: 1px solid transparent;
+        border-bottom: 2px solid transparent;
     }
 
     &:hover + .nice-span-container {
         height: $highlight-height;
         background-color: $bg-hover-color;
         .nice-span-ripple {
-            height: $highlight-focus-height;     
+            height: $highlight-focus-height;   
         }
         span.nice-span {
             height: $highlight-height;
@@ -55,8 +58,8 @@ input.nice-input {
         height: $highlight-focus-height;
         background-color: transparent;        
         .nice-span-ripple {
-            background-color: $bg-focus-color;
             height: $highlight-focus-height;
+            background-color: $bg-focus-color;
             visibility: visible;
             transform: scaleX(1);
             transition: transform 150ms linear,background-color .3s cubic-bezier(.55,0,.55,.2);
@@ -69,7 +72,8 @@ input.nice-input {
 
     &:disabled, &[readonly] {
         background-color: #fafafa;
-        opacity: 0.75;        
+        opacity: 0.75;
+        
         ~ .nice-label-wrapper label {
             color: $disabled-color;
         }
@@ -82,8 +86,11 @@ input.nice-input {
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    background-color: $bg-color;    
+    border: none;
+    margin: 0;
+    padding: 0;    
     height: $highlight-height;
+    background-color: $bg-color;
 
     .nice-span-ripple {
         width: 100%;
@@ -102,14 +109,15 @@ input.nice-input {
         height: $highlight-height;
         font-size: $font-size;    
         display: inline-block;
-        background-color: $font-color;   
+        background-color: $font-color;
         position: absolute;
         left: 0;
         bottom: 0;
     }
 }
 
-input.nice-input:focus ~ .nice-label-wrapper label {
+
+textarea.nice-textarea:focus ~ .nice-label-wrapper label {
     transform: translateY(-$font-size) scale(.75) perspective(5px) translateZ(0.001px);
     -ms-transform: translateY(-$font-size) scale(.75);
     width: 133.33333%;
